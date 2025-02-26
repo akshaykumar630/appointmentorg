@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Glassmorphism Appointment Form | Origins IVF</title>
+<style>
+    * {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+  background: url("http://codingstella.com/wp-content/uploads/2024/01/download-8-scaled.jpeg")
+    no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.form-box {
+  position: relative;
+  width: 400px;
+  height: auto;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 20px;
+  backdrop-filter: blur(15px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+h2 {
+  font-size: 2em;
+  color: #fff;
+  text-align: center;
+}
+
+.inputbox {
+  position: relative;
+  margin: 20px 0;
+  width: 310px;
+  border-bottom: 2px solid #fff;
+}
+
+.inputbox label {
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  transform: translateY(-50%);
+  color: #fff;
+  font-size: 1em;
+  pointer-events: none;
+  transition: 0.5s;
+}
+
+input:focus ~ label {
+  top: -5px;
+}
+input:valid ~ label {
+  top: -5px;
+}
+
+.inputbox input, .inputbox select {
+  width: 100%;
+  height: 40px;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 1em;
+  padding: 0 5px;
+  color: #fff;
+}
+
+.inputbox select option {
+  background: #333;
+  color: #fff;
+  font-size: 1em;
+}
+
+.inputbox ion-icon {
+  position: absolute;
+  right: 8px;
+  color: #fff;
+  font-size: 1.2em;
+  top: 20px;
+}
+
+button {
+  width: 100%;
+  height: 40px;
+  border-radius: 40px;
+  background: #fff;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: 600;
+}
+
+.register {
+  font-size: 0.9em;
+  color: #fff;
+  text-align: center;
+  margin: 25px 0 10px;
+}
+
+.register p a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 600;
+}
+
+.register p a:hover {
+  text-decoration: underline;
+}
+</style>
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<section>
+  <div class="form-box">
+    <div class="form-value">
+      <form action="">
+        <h2>ORIGINS IVF</h2>
+        <div class="inputbox">
+          <input type="text" required>
+          <label for="">Full Name</label>
+        </div>
+        <div class="inputbox">
+          <input type="number" required>
+          <label for="">Age</label>
+        </div>
+        <div class="inputbox">
+          <input type="text" required>
+          <label for="">Spouse Name</label>
+        </div>
+        <div class="inputbox">
+          <input type="number" required>
+          <label for="">Spouse Age</label>
+        </div>
+        <div class="inputbox">
+          <select required>
+            <option value="" disabled selected>Select Consultancy Type</option>
+            <option value="Fertility">Fertility</option>
+            <option value="Gynecology">Gynecology</option>
+          </select>
+        </div>
+        <div class="inputbox">
+          <select required>
+            <option value="" disabled selected>Select Branch</option>
+            <option value="Hanmakonda">Hanmakonda</option>
+            <option value="Hyderabad">Hyderabad</option>
+            <option value="Sathupalli">Sathupalli</option>
+            <option value="Khammam">Khammam</option>
+          </select>
+        </div>
+        <div class="inputbox">
+          <ion-icon name="calendar-outline" style="color: white;"></ion-icon>
+          <input type="date" id="appointmentDate" required>
+          <!-- <label for="appointmentDate">Appointment Date</label> -->
+        </div>
+        <div class="inputbox">
+          <ion-icon name="time-outline" style="color: white;"></ion-icon>
+          <input type="time" id="appointmentTime" required>
+          <!-- <label for="appointmentTime">Appointment Time</label> -->
+        </div>
+        <div class="register">
+          <input type="checkbox" id="detailsCorrect" required>
+          <label for="detailsCorrect">Above details are correct</label>
+        </div>
+        <button>Book Now</button>
+      </form>
+    </div>
+  </div>
+</section>
+<!-- partial -->
+  <script src='https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js'></script>
+<script src='https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js'></script>
+<script>
+  document.getElementById('appointmentDate').addEventListener('focus', function() {
+    this.placeholder = '';
+  });
+  document.getElementById('appointmentDate').addEventListener('blur', function() {
+    if (this.value === '') {
+      this.placeholder = 'dd/mm/yyyy';
+    }
+  });
+
+  document.getElementById('appointmentTime').addEventListener('focus', function() {
+    this.placeholder = '';
+  });
+  document.getElementById('appointmentTime').addEventListener('blur', function() {
+    if (this.value === '') {
+      this.placeholder = 'hh:mm';
+    }
+  });
+</script>
+</body>
+</html>
